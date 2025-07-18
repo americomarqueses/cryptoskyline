@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Skylines: Competitive Landscape Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        h1, h2, h3 {
+            color: #212529;
+        }
+        .section-intro {
+            color: #495057;
+            max-width: 48rem;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+        }
+        .swot-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            height: 100%;
+        }
+        .swot-card h3 {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .swot-icon {
+            margin-right: 0.75rem;
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            color: white;
+        }
+        .plan-phase {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border: 1px solid #E9ECEF;
+        }
+        .text-green-600 { color: #16A34A; }
+        .text-red-600 { color: #DC2626; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight">Competitive Landscape</h1>
+            <p class="mt-2 text-lg text-gray-600">A Competitive Analysis and Strategic Plan to Become #1</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="leaderboard" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-4">Market Leaderboard</h2>
+            <p class="section-intro">The latest leaderboard data places us at Rank 3. Crucially, it reveals our recent market share growth came at the cost of profitability—a common trend among many competitors, with the notable exception of the market leader, SkyNet Airlines.</p>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow-md rounded-lg text-sm">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Rank</th>
+                            <th class="py-3 px-4 text-left">Team</th>
+                            <th class="py-3 px-4 text-left">Mkt Share</th>
+                            <th class="py-3 px-4 text-left">Δ Mkt Share</th>
+                            <th class="py-3 px-4 text-left">Δ Profit</th>
+                            <th class="py-3 px-4 text-left">Δ NPS</th>
+                            <th class="py-3 px-4 text-left">Δ EES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b"><td class="py-3 px-4">1</td><td class="py-3 px-4 font-bold">SkyNet Airlines</td><td class="py-3 px-4">17.3%</td><td class="py-3 px-4 text-green-600 font-semibold">+174.0%</td><td class="py-3 px-4 text-green-600 font-semibold">+16.67%</td><td class="py-3 px-4 text-green-600 font-semibold">+51.0%</td><td class="py-3 px-4 text-green-600 font-semibold">+7.0%</td></tr>
+                        <tr class="border-b"><td class="py-3 px-4">2</td><td class="py-3 px-4 font-bold">FlyGPT Air</td><td class="py-3 px-4">6.3%</td><td class="py-3 px-4 text-green-600 font-semibold">+37.0%</td><td class="py-3 px-4 text-red-600 font-semibold">-53.28%</td><td class="py-3 px-4 text-green-600 font-semibold">+14.0%</td><td class="py-3 px-4 text-red-600 font-semibold">-34.0%</td></tr>
+                        <tr class="border-b bg-blue-50"><td class="py-3 px-4">3</td><td class="py-3 px-4 font-bold">Crypto Skylines</td><td class="py-3 px-4">11.3%</td><td class="py-3 px-4 text-green-600 font-semibold">+71.0%</td><td class="py-3 px-4 text-red-600 font-semibold">-16.41%</td><td class="py-3 px-4 text-green-600 font-semibold">+12.0%</td><td class="py-3 px-4 text-green-600 font-semibold">+12.0%</td></tr>
+                        <tr class="border-b"><td class="py-3 px-4">4</td><td class="py-3 px-4 font-bold">Incognito Jet</td><td class="py-3 px-4">5.8%</td><td class="py-3 px-4 text-red-600 font-semibold">-22.0%</td><td class="py-3 px-4 text-red-600 font-semibold">-35.36%</td><td class="py-3 px-4 text-green-600 font-semibold">+43.0%</td><td class="py-3 px-4 text-green-600 font-semibold">+14.0%</td></tr>
+                        <tr class="border-b"><td class="py-3 px-4">5</td><td class="py-3 px-4 font-bold">FOMO Express</td><td class="py-3 px-4">5.8%</td><td class="py-3 px-4 text-red-600 font-semibold">-26.0%</td><td class="py-3 px-4 text-red-600 font-semibold">-42.09%</td><td class="py-3 px-4 text-green-600 font-semibold">+30.0%</td><td class="py-3 px-4 text-green-600 font-semibold">+2.0%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="comparison" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-4">Head-to-Head: Performance Breakdown vs Top 5</h2>
+            <p class="section-intro">This chart starkly visualizes the different strategies among the top 5 airlines. SkyNet achieves balanced, profitable growth. The rest of the field, including us, is sacrificing profitability for market share and customer perception, a clearly unsustainable model.</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="chart-container">
+                    <canvas id="competitorChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="swot" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-4">SWOT Analysis</h2>
+            <p class="section-intro">Based on the competitive data, here is our updated strategic position.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="swot-card">
+                    <h3><span class="swot-icon bg-green-500">S</span>Strengths</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Controlled Growth:</strong> Our profit loss (-16.41%) is significantly less severe than other high-growth competitors like FlyGPT (-53.28%) and CAPTCHA (-62.30%). Our growth strategy is more measured.</li>
+                        <li><strong>Excellent People Metrics:</strong> Our +12% growth in both NPS and EES is strong and balanced, indicating a healthy foundation with customers and employees.</li>
+                        <li><strong>Strong Market Position:</strong> Our actual market share of 16.3% (post-Week 9) makes us a dominant player, likely challenging for Rank 2.</li>
+                    </ul>
+                </div>
+                <div class="swot-card">
+                    <h3><span class="swot-icon bg-red-500">W</span>Weaknesses</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Unprofitable Growth:</strong> This is our most critical weakness. Any growth that comes with a negative profit margin is unsustainable and must be corrected immediately.</li>
+                        <li><strong>Inefficient Growth Model:</strong> SkyNet proves that high growth in market share and NPS can be achieved profitably. Our current model does not do this.</li>
+                    </ul>
+                </div>
+                <div class="swot-card">
+                    <h3><span class="swot-icon bg-blue-500">O</span>Opportunities</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Path to Profitability:</strong> Our #1 opportunity is to make our 16.3% market share profitable through efficiency, pricing, and ancillary revenue.</li>
+                        <li><strong>Become the Sustainable Leader:</strong> The market is filled with unprofitable airlines. We can differentiate ourselves by being the first to combine high NPS/EES with strong, positive profit growth.</li>
+                    </ul>
+                </div>
+                <div class="swot-card">
+                    <h3><span class="swot-icon bg-yellow-500">T</span>Threats</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>SkyNet's Superior Model:</strong> SkyNet's ability to grow all key metrics simultaneously makes them the primary threat. Their strategy is currently better and more sustainable than ours.</li>
+                        <li><strong>Irrational Competition:</strong> The market's willingness to reward unprofitable NPS growth could lead to price wars and unsustainable service offerings that are difficult to compete against without also sacrificing profit.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="path-to-1" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-4">Path to #1: Our Strategic Plan for Market Leadership</h2>
+            <p class="section-intro">The data demands a clear plan. Profitability is now the immediate, critical focus. This plan leverages our market position to build a sustainable, industry-leading airline.</p>
+            <div class="space-y-8">
+                <div class="plan-phase">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">Phase 1 (Next 1-2 Weeks): Achieve Profitability</h3>
+                    <p class="mb-4">This is the most critical phase. We must pivot from growth-at-all-costs to smart, profitable operations. Failure here makes the #1 rank impossible.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Objective 1: Drive Profit NOW.</strong> The next decision *must* be heavily weighted towards profit. This includes optimizing routes, adjusting pricing, and exploring all ancillary revenue streams on our newly acquired customer base.</li>
+                        <li><strong>Objective 2: Maintain People Metrics.</strong> We cannot achieve profit by sacrificing our employees or customers. The challenge is to find efficiencies that don't harm our solid NPS/EES scores.</li>
+                        <li><strong>Objective 3: Pause Aggressive Marketing.</strong> Shift budget from market acquisition to loyalty campaigns for our existing 16.3% share, improving customer retention and lifetime value.</li>
+                    </ul>
+                </div>
+                <div class="plan-phase">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">Phase 2 (Weeks 3-4): Profitable, High-Velocity Growth</h3>
+                    <p class="mb-4">Once profitable, we can re-engage growth, but this time using SkyNet's efficient model as our benchmark.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Objective 1: Replicate Profitable NPS Growth.</strong> Analyze how SkyNet achieved massive NPS gains while growing profit. Implement a version that is profit-positive for us, such as a premium service tier or a tech innovation that also lowers costs.</li>
+                        <li><strong>Objective 2: Strategic Cost Leadership.</strong> Find a significant, non-customer-facing cost reduction. This could be renegotiating maintenance contracts, optimizing fuel hedging, or streamlining back-office processes.</li>
+                    </ul>
+                </div>
+                <div class="plan-phase">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">Phase 3 (Weeks 5+): Secure & Dominate</h3>
+                    <p class="mb-4">With a proven model for profitable growth, the final phase is about creating a defensible moat to secure the #1 position.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Objective 1: Build a Brand Fortress.</strong> Invest our profits in brand-building activities that associate Crypto Skylines with the unique combination of reliability, customer love, and smart business.</li>
+                        <li><strong>Objective 2: Foster Unbreakable Loyalty.</strong> Implement a best-in-class loyalty program that makes switching to a competitor financially and emotionally difficult for our customers.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-8 mt-8 border-t border-gray-200">
+        <p class="text-gray-600">From contender to leader: leveraging competitive insights for strategic advantage.</p>
+    </footer>
+
+    <script>
+        const chartTooltipCallbacks = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('competitorChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Δ Market Share (%)', 'Δ Profit (%)', 'Δ NPS (%)', 'Δ EES (%)'],
+                datasets: [
+                {
+                    label: 'SkyNet Airlines (Rank 1)',
+                    data: [174.0, 16.67, 51.0, 7.0],
+                    backgroundColor: 'rgba(254, 205, 81, 0.7)',
+                    borderColor: 'rgb(254, 205, 81)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'FlyGPT Air (Rank 2)',
+                    data: [37.0, -53.28, 14.0, -34.0],
+                    backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                    borderColor: 'rgb(139, 92, 246)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Crypto Skylines (Rank 3)',
+                    data: [71.0, -16.41, 12.0, 12.0],
+                    backgroundColor: 'rgba(0, 166, 251, 0.7)',
+                    borderColor: 'rgb(0, 166, 251)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Incognito Jet (Rank 4)',
+                    data: [-22.0, -35.36, 43.0, 14.0],
+                    backgroundColor: 'rgba(107, 114, 128, 0.7)',
+                    borderColor: 'rgb(107, 114, 128)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'FOMO Express (Rank 5)',
+                    data: [-26.0, -42.09, 30.0, 2.0],
+                    backgroundColor: 'rgba(249, 115, 22, 0.7)',
+                    borderColor: 'rgb(249, 115, 22)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Percentage Change (%)'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Bi-Weekly Performance Change vs. Top 5 Competitors'
+                    },
+                    ...chartTooltipCallbacks.plugins
+                }
+            }
+        });
+    </script>
+</body>
+</html>
